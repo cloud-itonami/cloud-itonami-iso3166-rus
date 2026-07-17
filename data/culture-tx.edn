@@ -1,0 +1,14 @@
+;; data/culture-tx.edn — DataScript tx-data derived from src/culture/facts.cljc
+;; `culture.facts/catalog` (ADR-2607171400 addendum 2, Wave 1 country-level).
+;; Same shape across every cloud-itonami-iso3166-* sibling. Do not hand-edit;
+;; regenerate from the catalog.
+
+[
+#:culture{:id "rus.dish.pelmeni", :name "Pelmeni", :country "RUS", :kind :dish, :summary "Dumplings of Russian cuisine that consist of a filling wrapped in thin, unleavened dough, considered a national dish of Russia.", :url "https://en.wikipedia.org/wiki/Pelmeni", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "rus.dish.blini", :name "Blini", :country "RUS", :kind :dish, :summary "Russian pancakes, often made with a yeast-raised batter of buckwheat and/or wheat flour and milk, traditionally served with garnishes such as smetana, cottage cheese or caviar.", :url "https://en.wikipedia.org/wiki/Blini", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "rus.dish.shchi", :name "Shchi", :country "RUS", :kind :dish, :summary "Traditional soup of Russia that became a staple food by the 10th century.", :url "https://en.wikipedia.org/wiki/Shchi", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "rus.beverage.kvass", :name "Kvass", :country "RUS", :kind :beverage, :summary "Fermented, cereal-based, low-alcoholic beverage that originates from northeastern Europe and has become one of the symbols of East Slavic cuisine, remaining culturally significant in Russia.", :url "https://en.wikipedia.org/wiki/Kvass", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "rus.craft.matryoshka-doll", :name "Matryoshka doll", :country "RUS", :kind :craft, :summary "The first Russian nested doll set was carved in the 1890s by craftsman Vasily Zvyozdochkin from a design by folk painter Sergey Malyutin, and the dolls continue to be mass-produced as a traditional handicraft to this day.", :url "https://en.wikipedia.org/wiki/Matryoshka_doll", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "rus.craft.khokhloma", :name "Khokhloma", :country "RUS", :kind :craft, :summary "A style of Russian art traditionally painted on wooden household items, featuring curved linear motifs of flowers, berries and leaves, originating in the 17th-century village of Khokhloma in the Volga region.", :url "https://en.wikipedia.org/wiki/Khokhloma", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "rus.heritage.kremlin-and-red-square", :name "Kremlin and Red Square", :country "RUS", :kind :heritage, :summary "The Kremlin and Red Square in Moscow were among the first Soviet patrimonies inscribed on the UNESCO World Heritage List, in 1990, under the official designation \"Kremlin and Red Square, Moscow\".", :url "https://en.wikipedia.org/wiki/Kremlin_and_Red_Square", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+]
