@@ -1,7 +1,7 @@
 (ns marketentry.governor
   "Market-Entry Compliance Governor -- the independent compliance layer
   that earns the MarketEntry-LLM the right to commit. The LLM has no
-  notion of jurisdictional procurement law, whether a Japan-resident
+  notion of jurisdictional procurement law, whether a Russia-resident
   authorized representative is actually on file, whether a claimed
   engagement fee actually equals base + months x rate, whether a
   corporate number has been verified for a filing that requires it, or
@@ -36,10 +36,10 @@
                                        jurisdiction actually been
                                        assessed with a full evidence
                                        checklist on file?
-    3. Japan-resident-rep missing  -- for `:filing/submit`, when the
+    3. Russia-resident-rep missing  -- for `:filing/submit`, when the
                                        engagement declares
                                        `:requires-ru-entity?
-                                       true` (near-universal for JPN
+                                       true` (near-universal for Russia
                                        public tenders per this
                                        blueprint's own text),
                                        INDEPENDENTLY verify
@@ -49,9 +49,10 @@
                                        (grep-verified absent as a
                                        governor check function name
                                        fleet-wide at build time).
-                                       Grounded in Japan's 全省庁統一資格
-                                       domestic office / agent
-                                       requirements.
+                                       Grounded in Russian legal entity
+                                       (INN/OGRN) typically required for EIS
+                                       participation (contracting authorities /
+                                       Federal Treasury).
     4. Engagement fee mismatch     -- for `:filing/submit`,
                                        INDEPENDENTLY recompute whether
                                        the engagement's own `:claimed-
@@ -121,7 +122,7 @@
   `:requires-ru-entity? true`, INDEPENDENTLY verify
   `:has-ru-entity?` is true -- the flagship genuinely new
   check this vertical adds. CONDITIONAL on the engagement's own
-  `:requires-ru-entity?` ground truth (most JPN public
+  `:requires-ru-entity?` ground truth (most Russia public
   tenders require it; a pure-foreign-market engagement may not)."
   [{:keys [op subject]} st]
   (when (= op :filing/submit)
@@ -129,7 +130,7 @@
       (when (and (true? (:requires-ru-entity? e))
                  (not (true? (:has-ru-entity? e))))
         [{:rule :ru-entity-missing
-          :detail (str subject " は日本居住代理人を要するが未確認 -- 提出提案は進められない")}]))))
+          :detail (str subject " はロシア居住代理人を要するが未確認 -- 提出提案は進められない")}]))))
 
 (defn- engagement-fee-mismatch-violations
   "For `:filing/submit`, INDEPENDENTLY recompute whether the
