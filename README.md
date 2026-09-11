@@ -3,7 +3,7 @@
 **`:implemented`** for **RUS**. Flagship `ru-entity-missing`, tax `inn-unverified`.
 
 ```
-clojure -M:dev:test
+kbb -M:dev:test
 ```
 
 ## Culture catalog
